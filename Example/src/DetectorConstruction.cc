@@ -52,8 +52,8 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   G4LogicalVolume* ParameterisedSphereLogical = new G4LogicalVolume(ParameterisedSphere, water, "ParameterisedSphere_log", 0, 0, 0);
 
   //SphericalParameterisation constructor: start radius, end radius, radial thickness, start phi, end phi, delta phi, start theta, end theta, delta theta
-  //Alternatively you can just provide the first three parameters, if you only want to parameterize radius. Phi and theta will be set to 0-360 and 0-180 respectively
-  SphericalParameterisation* SphericalParam = new SphericalParameterisation(0*cm,5*cm,1*cm,0*degree,360*degree,45*degree,0*degree,180*degree,45*degree);
+  //Alternatively you can just provide the first three parameters, if you only want to parameterize radius. phi and theta will be set to 0-360 and 0-180 respectively
+  SphericalParameterisation* SphericalParam = new SphericalParameterisation(0*cm,5*cm,1*cm,0*degree,180*degree,45*degree,0*degree,180*degree,45*degree);
 
   //Set the safety parameters of your parameterisation (these are the gaps left between adjacent voxels to prevent overlaps, tweak these if you have issues)
   SphericalParam->SetRadiusSafety(1e-3*nm);
@@ -69,6 +69,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
 
   SphericalParam->Place("SphericalParameterisation", ParameterisedSphereLogical, World_log);
 
+  //Call this to print out the information of each voxel
   //SphericalParam->PrintComputeDimensions();
 
   return World_phys;
