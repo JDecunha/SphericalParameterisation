@@ -1,0 +1,17 @@
+#Initialise the run
+/run/initialize
+
+#Set verbosity
+/process/em/verbose 0
+/control/verbose 0
+/tracking/verbose 0
+/run/verbose 1
+
+#20 keV monoenergetic electrons
+/gps/particle e-
+/gps/pos/type Point
+/gps/pos/centre 0. 0. 0. cm
+/gps/ang/type iso
+/gps/energy 20 keV
+
+/run/beamOn 1
