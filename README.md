@@ -1,8 +1,8 @@
 # SphericalParameterisation
 A G4VPVParameterisation which slices a sphere in radius, phi, and theta, for use with Geant4 applications. The SphericalParameterisation constructor is as follows: 
-```
-SphericalParameterisation(const G4double innerRadius, const G4double outerRadius, const G4double radialSegmentThickness, const G4double startPhi = 0*degree, const G4double endPhi = 360*degree, const G4double phiSegmentDegrees = 360*degree, const G4double startTheta = 0*degree, const G4double endTheta = 180*degree, const G4double thetaSegmentDegrees = 180*degree);
-```
+<pre>
+<b>SphericalParameterisation</b>(const <b>G4double</b> innerRadius, const <b>G4double</b> outerRadius, const <b>G4double</b> radialSegmentThickness, const <b>G4double</b> startPhi = 0*degree, const <b>G4double</b> endPhi = 360*degree, const <b>G4double</b> phiSegmentDegrees = 360*degree, const <b>G4double</b> startTheta = 0*degree, const <b>G4double</b> endTheta = 180*degree, const <b>G4double</b> thetaSegmentDegrees = 180*degree);
+</pre>
 You only have to set the first three parameters (inner radius, outer radius, and radial segment thickness) if you wish to parameterize the sphere as a function of radius. Otherwise you can provide the additional optional parameters to split the sphere as a function of phi and theta as well.
 ## Using SphericalParameterisation
 An example usage of the SphericalParameterisation is as follows. Start by creating the sphere which will be passed to the parameterisation. The size of the sphere at this point is arbitrary because the parameterisation changes it:
