@@ -88,7 +88,7 @@ void SphericalParameterisation::ComputeDimensions(G4Sphere& sphere, const G4int 
     G4int thetaNum = copyNo - (copyNo/_thetaIncrements)*_thetaIncrements;
 
     //Reset phiNum to zero every _thetaIncrements*_phiIncrements
-    G4int phiNum = copyNo - (copyNo/(_thetaIncrements*_phiIncrements))*_thetaIncrements*_phiIncrements;
+    G4int phiNum = (copyNo/(_thetaIncrements)) - (copyNo/(_thetaIncrements*_phiIncrements))*_phiIncrements;
 
     //Increments radius num every time phi and theta iterated over
     G4int radiusNum = copyNo/(_phiIncrements*_thetaIncrements);
@@ -100,8 +100,13 @@ void SphericalParameterisation::ComputeDimensions(G4Sphere& sphere, const G4int 
     sphere.SetStartPhiAngle(phiNum*_phiSegmentDegrees+_startPhi);
     sphere.SetDeltaPhiAngle(_phiSegmentDegrees-_phiSafety);
 
-    sphere.SetStartThetaAngle(thetaNum*_phiSegmentDegrees+_startPhi);
+    sphere.SetStartThetaAngle(thetaNum*_thetaSegmentDegrees+_startTheta);
     sphere.SetDeltaThetaAngle(_thetaSegmentDegrees-_thetaSafety);
+
+    // G4cout << "Theta num: " << thetaNum << G4endl;
+    // G4cout << "Phi num: " << phiNum << G4endl;
+    // G4cout << "Radius num: " << radiusNum << G4endl;
+
 
     //Break if too many copies
     if(copyNo >= (_phiIncrements*_thetaIncrements*_radialIncrements)) 
