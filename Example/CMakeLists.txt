@@ -17,9 +17,9 @@ include(${Geant4_USE_FILE}) #include the Geant4 CMakeLists
 add_executable(SphericalParameterisationExample main.cc)
 
 #locate our project source files and make a library
-	file(GLOB sources ${PROJECT_SOURCE_DIR}/src/*.cc)
+	file(GLOB sources ${PROJECT_SOURCE_DIR}/src/*.cc ${PROJECT_SOURCE_DIR}/../SphericalParameterisation.cc)
 	add_library(src STATIC ${sources})
-	target_include_directories(src PUBLIC ${PROJECT_SOURCE_DIR}/include ${Geant4_INCLUDE_DIR})
+	target_include_directories(src PUBLIC ${PROJECT_SOURCE_DIR}/include ${PROJECT_SOURCE_DIR}/../ ${Geant4_INCLUDE_DIR})
 
 ###
 ### Link MicroTrackGenerator with libraries

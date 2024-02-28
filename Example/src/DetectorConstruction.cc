@@ -70,7 +70,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   SphericalParam->Place("SphericalParameterisation", ParameterisedSphereLogical, World_log);
 
   //Call this to print out the information of each voxel
-  //SphericalParam->PrintComputeDimensions();
+  SphericalParam->PrintComputeDimensions();
 
   return World_phys;
 }
