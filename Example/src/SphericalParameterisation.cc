@@ -141,12 +141,12 @@ void SphericalParameterisation::PrintComputeDimensions(const G4int copyNo)
         G4cout << "Dimensions for sphere copy number: " << copyNo << G4endl;
 
         //Get and print the sphere values
-        G4cout << "Inner radius: " << testSphere.GetRmin() << " mm" << G4endl;
-        G4cout << "Outer radius: " << testSphere.GetRmax() << " mm" << G4endl;
-        G4cout << "Start phi angle: " << testSphere.GetSPhi()/deg << " degrees" << G4endl;
-        G4cout << "Delta phi angle: " << testSphere.GetDPhi()/deg << " degrees" << G4endl;
-        G4cout << "Start theta angle:  " << testSphere.GetSTheta()/deg << " degrees" << G4endl;
-        G4cout << "Delta theta angle: " << testSphere.GetDTheta()/deg << " degrees" << G4endl;
+        G4cout << "Inner radius: " << testSphere.GetInnerRadius() << " mm" << G4endl;
+        G4cout << "Outer radius: " << testSphere.GetOuterRadius() << " mm" << G4endl;
+        G4cout << "Start phi angle: " << testSphere.GetStartPhiAngle()/deg << " degrees" << G4endl;
+        G4cout << "Delta phi angle: " << testSphere.GetDeltaPhiAngle()/deg << " degrees" << G4endl;
+        G4cout << "Start theta angle:  " << testSphere.GetStartThetaAngle()/deg << " degrees" << G4endl;
+        G4cout << "Delta theta angle: " << testSphere.GetDeltaThetaAngle()/deg << " degrees" << G4endl;
     }
     else //copyNo not explicitly given, loop through all  
     {
@@ -157,12 +157,12 @@ void SphericalParameterisation::PrintComputeDimensions(const G4int copyNo)
             G4cout << "Dimensions for sphere copy number: " << i << G4endl;
 
             //Get and print the sphere values
-            G4cout << "Inner radius: " << testSphere.GetRmin() << " mm" << G4endl;
-            G4cout << "Outer radius: " << testSphere.GetRmax() << " mm" << G4endl;
-            G4cout << "Start phi angle: " << testSphere.GetSPhi()/deg << " degrees" << G4endl;
-            G4cout << "Delta phi angle: " << testSphere.GetDPhi()/deg << " degrees" << G4endl;
-            G4cout << "Start theta angle:  " << testSphere.GetSTheta()/deg << " degrees" << G4endl;
-            G4cout << "Delta theta angle: " << testSphere.GetDTheta()/deg << " degrees" << G4endl;
+            G4cout << "Inner radius: " << testSphere.GetInnerRadius() << " mm" << G4endl;
+            G4cout << "Outer radius: " << testSphere.GetOuterRadius() << " mm" << G4endl;
+            G4cout << "Start phi angle: " << testSphere.GetStartPhiAngle()/deg << " degrees" << G4endl;
+            G4cout << "Delta phi angle: " << testSphere.GetDeltaPhiAngle()/deg << " degrees" << G4endl;
+            G4cout << "Start theta angle:  " << testSphere.GetStartThetaAngle()/deg << " degrees" << G4endl;
+            G4cout << "Delta theta angle: " << testSphere.GetDeltaThetaAngle()/deg << " degrees" << G4endl;
             G4cout << G4endl;
         }
     }
